@@ -7,7 +7,7 @@ ipcrm/stack_example:
   PkgInclude:
     - '*'
   PostInstall:
-    - 'export PATH="/Users/distelli/.rbenv/bin:$PATH"'
+    - 'export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"'
     - echo $DISTELLI_APPNAME
     - echo $DISTELLI_ENV
     - rbenv global 2.3.1
