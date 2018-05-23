@@ -1,9 +1,18 @@
-SparkleFormation.new(:computedyn, :provider => :aws).load(:base).overrides do
+SparkleFormation.new(:computedyn,
+  :compile_time_parameters => {
+    :frontend_count => { :type => :number, :default => 1 },
+    :instance_name  => { :type => :string },
+  },
+  :provider => :aws
+).load(:base).overrides do
 
   parameters do
     network_vpc_id.type 'String'
     network_subnet_id1.type 'String'
     network_subnet_id2.type 'String'
+    instance_name.type 'String'
+    flavor.type 'String'
+    frontend_count.type 'Number'
 
     ssh_key_name do
       type 'String'
@@ -53,12 +62,12 @@ SparkleFormation.new(:computedyn, :provider => :aws).load(:base).overrides do
     end
   end
 
-  dynamic!(:rds, :unicorn,
+  dynamic!(:rds, state!(:instance_name),
      :app_username => ref!(:app_username),
      :app_password => ref!(:app_password),
   )
 
-  [:sparkle, :magic, :jawn].each do |x|
-    dynamic!(:node, x)
+  state!(:frontend_count).to_i.times do |i|
+    dynamic!(:node, "#{state!(:instance_name)}#{i}", :instance_flavor => ref!(:flavor))
   end
 end

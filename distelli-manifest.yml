@@ -1,4 +1,6 @@
 ipcrm/stack_example:
+  Env:
+    - LOCATION: "primary"
   Build:
     - rbenv global 2.3.1
     - 'eval "$(rbenv init -)"'
@@ -13,8 +15,7 @@ ipcrm/stack_example:
     - rbenv global 2.3.1
     - 'eval "$(rbenv init -)"'
     - bundle install
-    - stack_master apply $DISTELLI_ENV thejawns --no
+    - stack_master apply $LOCATION $DISTELLI_ENV --no
     - bundle exec stack_master status
-    - bundle exec stack_master apply $DISTELLI_ENV thejawns --yes
-#    - bundle exec stack_master apply $DISTELLI_ENV $DISTELLI_APPNAME --yes
+    - bundle exec stack_master apply $LOCATION $DISTELLI_ENV --yes
 

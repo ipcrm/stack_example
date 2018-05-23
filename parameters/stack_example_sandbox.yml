@@ -1,11 +1,12 @@
 ---
-AppPassword: computedyn
-AppUsername: computedyn
+AppPassword: testherepls
+AppUsername: testherepls
 ImageIdName: ami-63ac5803
-JawnFlavor: t2.small
-MagicFlavor: t2.small
-SparkleFlavor: t2.small
 SshKeyName: default
+compile_time_parameters:
+  instance_name: stack_example_sandbox
+  frontend_count: 1
+Flavor: t1.micro
 NetworkSubnetId1:
   stack_output: tenant-network/NetworkSubnetId1
 NetworkSubnetId2:

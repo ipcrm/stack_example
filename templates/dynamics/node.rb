@@ -1,11 +1,7 @@
 SparkleFormation.dynamic(:node) do |name, opts={}|
 
   parameters do
-    set!("#{name}_flavor".to_sym) do
-      type 'String'
-      default 't2.small'
-      allowed_values registry!(:instance_flavor)
-    end
+    flavor ref!(:instance_flavor)
   end
 
   dynamic!(:ec2_instance, name) do
