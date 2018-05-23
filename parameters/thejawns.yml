@@ -5,7 +5,7 @@ ImageIdName: ami-63ac5803
 JawnFlavor: t2.small
 MagicFlavor: t2.small
 SparkleFlavor: t2.small
-SshKeyName: sparkle
+SshKeyName: default
 NetworkSubnetId1:
   stack_output: tenant-network/NetworkSubnetId1
 NetworkSubnetId2:

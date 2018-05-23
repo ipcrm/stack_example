@@ -12,9 +12,15 @@ SparkleFormation.dynamic(:node) do |name, opts={}|
     properties do
       image_id ref!(:image_id_name)
       key_name ref!(:ssh_key_name)
-      security_group_ids [ ref!(:global_ec2_security_group) ]
       instance_type ref!("#{name}_flavor".to_sym)
-      subnet_id ref!(:network_subnet_id1)
+      network_interfaces array!(
+        -> {
+         associate_public_ip_address true
+         device_index 0
+         subnet_id ref!(:network_subnet_id1)
+         group_set [ ref!(:global_ec2_security_group) ]
+        }
+      )
     end
   end
 
