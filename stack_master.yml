@@ -1,0 +1,23 @@
+region_aliases:
+  production: us-west-2
+
+stack_defaults:
+  tags:
+    application: awesome-app
+
+region_defaults:
+  us-west-2:
+    tags:
+      environment: production
+
+stacks:
+  production:
+    thejawns:
+      template: computedyn.rb
+      tags:
+        purpose: front-end
+    tenant-network:
+      template: network.rb
+      tags:
+        purpose: core-networking
+

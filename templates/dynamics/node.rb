@@ -8,11 +8,6 @@ SparkleFormation.dynamic(:node) do |name, opts={}|
     end
   end
 
-  outputs.set!("#{name}_public_address".to_sym) do
-    description "Compute instance public address - #{name}"
-    value attr!("#{name}_ec2_instance".to_sym, :public_ip)
-  end
-
   dynamic!(:ec2_instance, name) do
     properties do
       image_id ref!(:image_id_name)

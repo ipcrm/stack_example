@@ -1,0 +1,18 @@
+{
+  "apply_stacks": [
+    "tenant-network"
+  ],
+  "stacks": [
+    "thejawns"
+  ],
+  "parameters": {
+    "network_vpc_id": "default",
+    "network_subnet_id1": "default",
+    "network_subnet_id2": "default",
+    "ssh_key_name": "default",
+    "image_id_name": "default",
+    "app_username": "default",
+    "app_password": "default"
+  },
+  "template": "computedyn"
+}

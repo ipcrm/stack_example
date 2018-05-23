@@ -20,7 +20,7 @@ SparkleFormation.dynamic(:rds) do |name, opts={}|
       multi_a_z false
       d_b_instance_class 'db.m1.small'
       v_p_c_security_groups [ ref!(:global_ec2_security_group) ]
-      d_b_subnet_group_name [ name ]
+      d_b_subnet_group_name name
     end
   end
 
