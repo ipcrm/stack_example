@@ -7,9 +7,10 @@ ipcrm/stack_example:
   PkgInclude:
     - '*'
   PostInstall:
-    - rbenv global 2.3.1
-    - 'eval "$(rbenv init -)"'
-    - bundle install
-    - bundle exec stack_master status
-    - bundle exec stack_master apply $DISTELLI_ENV thejawns --yes
+    - echo $DISTELLI_APPNAME
+#    - rbenv global 2.3.1
+#    - 'eval "$(rbenv init -)"'
+#    - bundle install
+#    - bundle exec stack_master status
+#    - bundle exec stack_master apply $DISTELLI_ENV thejawns --yes
 
