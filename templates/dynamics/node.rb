@@ -1,14 +1,10 @@
 SparkleFormation.dynamic(:node) do |name, opts={}|
 
-  parameters do
-    flavor ref!(:instance_flavor)
-  end
-
   dynamic!(:ec2_instance, name) do
     properties do
       image_id ref!(:image_id_name)
       key_name ref!(:ssh_key_name)
-      instance_type ref!("#{name}_flavor".to_sym)
+      instance_type ref!(:flavor_type)
       network_interfaces array!(
         -> {
          associate_public_ip_address true

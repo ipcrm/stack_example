@@ -5,13 +5,12 @@ SparkleFormation.new(:computedyn,
   },
   :provider => :aws
 ).load(:base).overrides do
-
-  parameters do
+parameters do
     network_vpc_id.type 'String'
     network_subnet_id1.type 'String'
     network_subnet_id2.type 'String'
     instance_name.type 'String'
-    flavor.type 'String'
+    flavor_type.type 'String'
     frontend_count.type 'Number'
 
     ssh_key_name do
@@ -68,6 +67,6 @@ SparkleFormation.new(:computedyn,
   )
 
   state!(:frontend_count).to_i.times do |i|
-    dynamic!(:node, "#{state!(:instance_name)}#{i}", :instance_flavor => ref!(:flavor))
+    dynamic!(:node, "#{state!(:instance_name)}#{i}")
   end
 end
