@@ -28,8 +28,5 @@ SparkleFormation.dynamic(:rds) do |name, opts={}|
     description "RDS Endpoint Address - #{name}"
     value attr!("#{name}_r_d_s_d_b_instance".to_sym, "Endpoint.Address".to_sym)
   end
-
-  #    set!('MultiAZ'._no_hump, false)
-  #    set!('DBInstanceClass'._no_hump, 'db.m1.small')
 end
 
