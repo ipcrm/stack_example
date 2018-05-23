@@ -8,7 +8,7 @@ compile_time_parameters:
   frontend_count: 3
 instance_name: stack_example_production
 frontend_count: 3
-FlavorType: t1.small
+FlavorType: t2.small
 NetworkSubnetId1:
   stack_output: tenant-network/NetworkSubnetId1
 NetworkSubnetId2:
