@@ -3,7 +3,7 @@ AppPassword: computedyn
 AppUsername: computedyn
 ImageIdName: ami-63ac5803
 JawnFlavor: t2.small
-MagicFlavor: t2.small
+MagicFlavor: t2.micro
 SparkleFlavor: t2.small
 SshKeyName: default
 NetworkSubnetId1:

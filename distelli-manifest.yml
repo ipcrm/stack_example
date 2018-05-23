@@ -1,0 +1,15 @@
+ipcrm/stack_example:
+  Build:
+    - rbenv global 2.3.1
+    - 'eval "$(rbenv init -)"'
+    - bundle install
+    - bundle exec stack_master validate
+  PkgInclude:
+    - '*'
+  Post-Install:
+    - rbenv global 2.3.1
+    - 'eval "$(rbenv init -)"'
+    - bundle install
+    - bundle exec stack_master status
+    - bundle exec stack_master apply $DISTELLI_ENV thejawns --yes
+
