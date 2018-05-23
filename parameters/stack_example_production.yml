@@ -6,6 +6,8 @@ SshKeyName: default
 compile_time_parameters:
   instance_name: stack_example_production
   frontend_count: 3
+instance_name: stack_example_production
+frontend_count: 3
 FlavorType: t1.small
 NetworkSubnetId1:
   stack_output: tenant-network/NetworkSubnetId1
