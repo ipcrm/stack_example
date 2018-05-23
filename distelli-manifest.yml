@@ -9,10 +9,11 @@ ipcrm/stack_example:
   PostInstall:
     - echo $DISTELLI_APPNAME
     - echo $DISTELLI_ENV
-#    - rbenv global 2.3.1
-#    - 'eval "$(rbenv init -)"'
-#    - bundle install
-#    - bundle exec stack_master status
-#    - bundle exec stack_master apply $DISTELLI_ENV thejawns --yes
+    - rbenv global 2.3.1
+    - 'eval "$(rbenv init -)"'
+    - bundle install
+    - stack_master apply $DISTELLI_ENV thejawns --no
+    - bundle exec stack_master status
+    - bundle exec stack_master apply $DISTELLI_ENV thejawns --yes
 #    - bundle exec stack_master apply $DISTELLI_ENV $DISTELLI_APPNAME --yes
 

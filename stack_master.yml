@@ -1,6 +1,6 @@
+endpoint: https://cloudformation.amazonaws.com
 region_aliases:
-  production: us-west-2
-
+  'stackmasterproduction': us-west-2
 stack_defaults:
   tags:
     application: awesome-app
@@ -11,7 +11,7 @@ region_defaults:
       environment: production
 
 stacks:
-  production:
+  'stackmasterproduction':
     thejawns:
       template: computedyn.rb
       tags:
