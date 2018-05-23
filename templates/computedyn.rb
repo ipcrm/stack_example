@@ -32,17 +32,17 @@ parameters do
     end
   end
 
-  dynamic!(:ec2_security_group, :global) do
+  dynamic!(:ec2_security_group, "#{state!(:instance_name)}_sg".to_sym) do
     properties do
-      group_description 'Default Access'
-      group_name 'default-global-group'
+      group_description "#{state!(:instance_name)}_sg"
+      group_name "#{state!(:instance_name)}_sg"
       vpc_id ref!(:network_vpc_id)
     end
   end
 
-  dynamic!(:ec2_security_group_ingress, :global_udp) do
+  dynamic!(:ec2_security_group_ingress, "#{state!(:instance_name)}_udp_ingress".to_sym) do
     properties do
-      group_id ref!(:global_ec2_security_group)
+      group_id ref!("#{state!(:instance_name)}_sg_ec2_security_group".to_sym)
       cidr_ip '0.0.0.0/0'
       from_port 0
       to_port 65535
@@ -50,9 +50,9 @@ parameters do
     end
   end
 
-  dynamic!(:ec2_security_group_ingress, :global_tcp) do
+  dynamic!(:ec2_security_group_ingress, "#{state!(:instance_name)}_ec2_security_group".to_sym) do
     properties do
-      group_id ref!(:global_ec2_security_group)
+      group_id ref!("#{state!(:instance_name)}_sg_ec2_security_group".to_sym)
       group_name
       cidr_ip '0.0.0.0/0'
       from_port 0

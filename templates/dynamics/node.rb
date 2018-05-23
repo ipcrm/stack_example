@@ -10,7 +10,7 @@ SparkleFormation.dynamic(:node) do |name, opts={}|
          associate_public_ip_address true
          device_index 0
          subnet_id ref!(:network_subnet_id1)
-         group_set [ ref!(:global_ec2_security_group) ]
+         group_set [ ref!("#{state!(:instance_name)}_sg_ec2_security_group".to_sym) ]
         }
       )
     end

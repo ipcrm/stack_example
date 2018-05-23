@@ -19,7 +19,7 @@ SparkleFormation.dynamic(:rds) do |name, opts={}|
       master_user_password ref!(:app_password)
       multi_a_z false
       d_b_instance_class 'db.m1.small'
-      v_p_c_security_groups [ ref!(:global_ec2_security_group) ]
+      v_p_c_security_groups [ ref!("#{state!(:instance_name)}_sg_ec2_security_group".to_sym) ]
       d_b_subnet_group_name name
     end
   end
