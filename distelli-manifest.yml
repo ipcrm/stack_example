@@ -6,7 +6,7 @@ ipcrm/stack_example:
     - bundle exec stack_master validate
   PkgInclude:
     - '*'
-  Post-Install:
+  PostInstall:
     - rbenv global 2.3.1
     - 'eval "$(rbenv init -)"'
     - bundle install
