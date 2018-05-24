@@ -1,0 +1,17 @@
+---
+compile_time_parameters:
+  instance_name: stack_example_dev
+  frontend_count: 1
+instance_name: stack_example_dev
+frontend_count: 1
+AppPassword: testherepls
+AppUsername: testherepls
+ImageIdName: ami-218eed59
+SshKeyName: default
+FlavorType: t2.small
+NetworkSubnetId1:
+  stack_output: tenant-network/NetworkSubnetId1
+NetworkSubnetId2:
+  stack_output: tenant-network/NetworkSubnetId2
+NetworkVpcId:
+  stack_output: tenant-network/NetworkVpcId
