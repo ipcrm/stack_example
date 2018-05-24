@@ -4,6 +4,7 @@ ipcrm/stack_example:
     - 'eval "$(rbenv init -)"'
     - bundle install
     - bundle exec stack_master validate
+    - bundle exec stack_master diff
   PkgInclude:
     - '*'
   PostInstall:
