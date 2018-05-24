@@ -13,21 +13,21 @@ stacks:
         environment: production
 
     stack_example_production:
-      template: computedyn.rb
+      template: lamp_stack.rb
       tags:
         purpose: front-end
 
     stack_example_staging:
-      template: computedyn.rb
+      template: lamp_stack.rb
       tags:
         purpose: front-end
 
     stack_example_sandbox:
-      template: computedyn.rb
+      template: lamp_stack.rb
       tags:
         purpose: front-end
 
     stack_example_dev:
-      template: computedyn.rb
+      template: lamp_stack.rb
       tags:
         purpose: front-end

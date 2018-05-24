@@ -1,4 +1,4 @@
-SparkleFormation.new(:computedyn,
+SparkleFormation.new(:lamp_stack,
   :compile_time_parameters => {
     :frontend_count => { :type => :number, :default => 1 },
     :instance_name  => { :type => :string },
