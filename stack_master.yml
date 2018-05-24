@@ -26,3 +26,8 @@ stacks:
       template: computedyn.rb
       tags:
         purpose: front-end
+
+    stack_example_dev:
+      template: computedyn.rb
+      tags:
+        purpose: front-end
