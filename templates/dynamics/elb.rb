@@ -16,6 +16,7 @@ SparkleFormation.dynamic(:elb) do |name, opts={}|
         }
       )
       instances instance_list
+      security_groups [ ref!("#{state!(:instance_name)}_sg_ec2_security_group".to_sym) ]
     end
   end
 end
