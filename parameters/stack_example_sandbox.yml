@@ -6,7 +6,7 @@ instance_name: stack_example_sandbox
 frontend_count: 1
 AppPassword: testherepls
 AppUsername: testherepls
-ImageIdName: ami-63ac5803
+ImageIdName: ami-218eed59
 SshKeyName: default
 FlavorType: t2.small
 NetworkSubnetId1:

@@ -1,7 +1,7 @@
 ---
 AppPassword: stagingpass
 AppUsername: stagingpass
-ImageIdName: ami-218eed59
+ImageIdName: ami-63ac5803
 SshKeyName: default
 compile_time_parameters:
   instance_name: stack_example_staging
