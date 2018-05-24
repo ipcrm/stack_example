@@ -2,8 +2,7 @@
 compile_time_parameters:
   instance_name: stack_example_dev
   frontend_count: 1
-instance_name: stack_example_dev
-frontend_count: 1
+  userdata_template: example.erb
 AppPassword: testherepls
 AppUsername: testherepls
 ImageIdName: ami-218eed59

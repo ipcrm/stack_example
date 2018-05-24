@@ -2,6 +2,7 @@ SparkleFormation.new(:computedyn,
   :compile_time_parameters => {
     :frontend_count => { :type => :number, :default => 1 },
     :instance_name  => { :type => :string },
+    :userdata_template => { :type => :string },
   },
   :provider => :aws
 ).load(:base).overrides do
@@ -9,9 +10,7 @@ parameters do
     network_vpc_id.type 'String'
     network_subnet_id1.type 'String'
     network_subnet_id2.type 'String'
-    instance_name.type 'String'
     flavor_type.type 'String'
-    frontend_count.type 'Number'
 
     ssh_key_name do
       type 'String'
@@ -67,8 +66,8 @@ parameters do
   )
 
   state!(:frontend_count).to_i.times do |i|
-    dynamic!(:node, "#{state!(:instance_name)}#{i}", 
-      :userdata => 'apache.erb',
+    dynamic!(:node, "#{state!(:instance_name)}#{i}",
+      :userdata => state!(:userdata_template),
       :i_name => state!(:instance_name),
     )
   end

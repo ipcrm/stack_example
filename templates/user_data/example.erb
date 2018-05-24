@@ -6,3 +6,13 @@ service httpd start
 
 MYSQL=<%= attr!("#{iname}_r_d_s_d_b_instance".to_sym, "Endpoint.Address".to_sym) %>
 echo $MYSQL > /etc/mysql
+
+echo "
+Hello world!
+<br />
+<br />
+<b>MySQL:</b> ${MYSQL}
+" > /var/www/html/index.html
+
+
+
