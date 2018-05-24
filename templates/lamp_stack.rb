@@ -6,6 +6,7 @@ SparkleFormation.new(:lamp_stack,
   },
   :provider => :aws
 ).load(:base).overrides do
+description "#{state!(:instance_name)} - lamp_stack instsance"
 parameters do
     network_vpc_id.type 'String'
     network_subnet_id1.type 'String'

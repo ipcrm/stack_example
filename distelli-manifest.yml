@@ -15,8 +15,9 @@ ipcrm/stack_example:
     - rbenv global 2.3.1
     - 'eval "$(rbenv init -)"'
     - bundle install
-    - stack_master apply $LOCATION $DISTELLI_ENV --no
+    - 'APP=$(echo stack_master_dev|cut -d"_" -f1 -f2)'
+    - 'STAGE=$(echo stack_master_dev|cut -d"_" -f3)'
     - bundle exec stack_master status
     - echo "Applying Changes (please wait):"
-    - bundle exec stack_master apply $LOCATION $DISTELLI_ENV --yes
+    - bundle exec stack_master apply $STAGE $APP --yes
 

@@ -1,33 +1,49 @@
 region_aliases:
-  primary: us-west-2
-stack_defaults:
-  tags:
-    application: demo-app
+  production: us-west-2
+  staging: us-west-1
+  dev: us-east-1
+
+region_defaults:
+  us-east-1:
+    tags:
+      environment: dev
+  us-west-1:
+    tags:
+      environment: staging
+  us-west-2:
+    tags:
+      environment: production
 
 stacks:
-  primary:
+  production:
     tenant-network:
       template: network.rb
       tags:
         purpose: core-networking
-        environment: production
 
-    stack_example_production:
+    stack_example:
       template: lamp_stack.rb
       tags:
-        purpose: front-end
+        purpose: lamp_example
 
-    stack_example_staging:
+  staging:
+    tenant-network:
+      template: network.rb
+      tags:
+        purpose: core-networking
+
+    stack_example:
       template: lamp_stack.rb
       tags:
-        purpose: front-end
+        purpose: lamp_example
 
-    stack_example_sandbox:
+  dev:
+    tenant-network:
+      template: network.rb
+      tags:
+        purpose: core-networking
+
+    stack_example:
       template: lamp_stack.rb
       tags:
-        purpose: front-end
-
-    stack_example_dev:
-      template: lamp_stack.rb
-      tags:
-        purpose: front-end
+        purpose: lamp_example

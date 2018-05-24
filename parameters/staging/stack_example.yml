@@ -1,0 +1,10 @@
+---
+SshKeyName: default-us-west-1
+ImageIdName: ami-7aaaa51a
+compile_time_parameters:
+  instance_name: lamp_example_staging
+  frontend_count: 3
+  userdata_template: example.erb
+AppPassword: testherepls
+AppUsername: testherepls
+FlavorType: t1.micro
