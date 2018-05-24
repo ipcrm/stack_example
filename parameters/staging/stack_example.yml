@@ -7,4 +7,3 @@ compile_time_parameters:
   userdata_template: example.erb
 AppPassword: testherepls
 AppUsername: testherepls
-FlavorType: t1.micro

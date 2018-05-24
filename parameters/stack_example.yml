@@ -1,6 +1,6 @@
 ---
 SshKeyName: default
-FlavorType: t2.small
+FlavorType: t1.micro
 NetworkSubnetId1:
   stack_output: tenant-network/NetworkSubnetId1
 NetworkSubnetId2:
