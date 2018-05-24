@@ -67,6 +67,11 @@ parameters do
   )
 
   state!(:frontend_count).to_i.times do |i|
-    dynamic!(:node, "#{state!(:instance_name)}#{i}")
+    dynamic!(:node, "#{state!(:instance_name)}#{i}", 
+      :userdata => 'apache.erb',
+      :i_name => state!(:instance_name),
+    )
   end
+
+  dynamic!(:elb, state!(:instance_name))
 end

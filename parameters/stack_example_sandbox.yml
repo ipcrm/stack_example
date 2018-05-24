@@ -8,7 +8,7 @@ AppPassword: testherepls
 AppUsername: testherepls
 ImageIdName: ami-63ac5803
 SshKeyName: default
-FlavorType: t1.micro
+FlavorType: t2.small
 NetworkSubnetId1:
   stack_output: tenant-network/NetworkSubnetId1
 NetworkSubnetId2:

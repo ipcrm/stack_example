@@ -1,0 +1,6 @@
+#!/bin/bash
+
+apt-get update
+apt-get install apache2
+
+MYSQL=<%= attr!("#{iname}_r_d_s_d_b_instance".to_sym, "Endpoint.Address".to_sym) %>
