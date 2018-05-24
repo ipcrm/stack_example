@@ -17,5 +17,6 @@ ipcrm/stack_example:
     - bundle install
     - stack_master apply $LOCATION $DISTELLI_ENV --no
     - bundle exec stack_master status
+    - echo "Applying Changes (please wait):"
     - bundle exec stack_master apply $LOCATION $DISTELLI_ENV --yes
 
