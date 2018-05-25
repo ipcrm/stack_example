@@ -1,0 +1,14 @@
+#!/bin/bash -e
+(type curl &> /dev/null && curl -sSL 'https://pipelines.puppet.com/download/client' || wget -qO- 'https://pipelines.puppet.com/download/client') | sh
+cat <<'EOF' > /etc/distelli.yml
+DistelliAccessToken: 6U0OSEM2S50H0GXR05L1K2SZQ
+DistelliSecretKey: qlsozc9a2e7g9g5iilcne7k3cdbpq423awc1l
+Endpoints:
+  agent_service: dumps://ags.distelli.com
+  app_launcher: https://login.distelli.com
+  app_management: https://login.distelli.com
+  login: https://login.distelli.com
+  webui: https://pipelines.puppet.com
+
+EOF
+PATH=/usr/local/bin:$PATH distelli agent install -readyml
